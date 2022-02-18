@@ -155,7 +155,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onToggleOn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Gate, MyGame
+        m_MethodName: OpenLock
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Toggle, MyGame
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onToggleOff:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Gate, MyGame
+        m_MethodName: CloseLock
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Toggle, MyGame
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _colorOn: {r: 0.16579854, g: 1, b: 0, a: 1}
+  _colorOff: {r: 1, g: 0, b: 0, a: 1}
+  sr: {fileID: 772237969555204843}

@@ -46,6 +46,7 @@ MonoBehaviour:
   _fire: {fileID: 4645590585023127803}
   _playerTarget: {fileID: 0}
   _detectionRadius: 7
+  _drawGizmo: 0
 --- !u!1 &1855186171643597931
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,8 +376,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5abcb53e30ac2942a455b22a94cde38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletRecyclerRef: {fileID: 11400000, guid: 7d432891549ad8045bb9bc204ea934d4, type: 2}
   _spawnPoint: {fileID: 5699784363214921206}
   _bulletPrefab: {fileID: 6056709005347279180, guid: 01834f7a3e0c2fb448d9d118fcdbd49c, type: 3}
+  _canFire: 1
 --- !u!61 &9182086342212961279
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -415,6 +418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b012a9497459e4fba5ced019bc2ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sliders: []
+  feedbacks: []
   _startHealth: 10
   _maxHealth: 10
   _onDeath:
@@ -432,6 +437,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _isShield: 0
 --- !u!1 &6019756107402616924
 GameObject:
   m_ObjectHideFlags: 0

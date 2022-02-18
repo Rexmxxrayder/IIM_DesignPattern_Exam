@@ -10,10 +10,12 @@ public class PlayerInputDispatcher : MonoBehaviour
 
     [SerializeField] EntityMovement _movement;
     [SerializeField] EntityFire _fire;
+    [SerializeField] EntityBlock _block;
 
     [SerializeField] InputActionReference _pointerPosition;
     [SerializeField] InputActionReference _moveJoystick;
     [SerializeField] InputActionReference _fireButton;
+    [SerializeField] InputActionReference _blockButton;
 
     Coroutine MovementTracking { get; set; }
 
@@ -23,6 +25,8 @@ public class PlayerInputDispatcher : MonoBehaviour
     {
         // binding
         _fireButton.action.started += FireInput;
+        _blockButton.action.started += BlockInput;
+        _blockButton.action.canceled += BlockInputCancel;
 
         _moveJoystick.action.started += MoveInput;
         _moveJoystick.action.canceled += MoveInputCancel;
@@ -31,6 +35,8 @@ public class PlayerInputDispatcher : MonoBehaviour
     private void OnDestroy()
     {
         _fireButton.action.started -= FireInput;
+        _blockButton.action.started -= BlockInput;
+        _blockButton.action.canceled -= BlockInputCancel;
 
         _moveJoystick.action.started -= MoveInput;
         _moveJoystick.action.canceled -= MoveInputCancel;
@@ -63,9 +69,24 @@ public class PlayerInputDispatcher : MonoBehaviour
     private void FireInput(InputAction.CallbackContext obj)
     {
         float fire = obj.ReadValue<float>();
-        if(fire==1)
+        if(fire==1 && _fire.CanFire)
         {
             _fire.FireBullet(2);
+        }
+    }
+
+    private void BlockInput(InputAction.CallbackContext obj) {
+        float block = obj.ReadValue<float>();
+        if (block == 1) {
+            _block.Block();
+            _fire.CanFire = false;
+        }
+    }
+    private void BlockInputCancel(InputAction.CallbackContext obj) {
+        float block = obj.ReadValue<float>();
+        if (block == 0) {
+            _block.UnBlock();
+            _fire.CanFire = true;
         }
     }
 

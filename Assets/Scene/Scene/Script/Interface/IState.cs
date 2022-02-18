@@ -1,10 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public interface IState
-{
-
-    void Init();
-    void Enter();
-    void Update();
-    void Exit();
-
+public interface IState {
+    void NextState();
+    void PreviousState();
 }

@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityFire : MonoBehaviour
-{
+public class EntityFire : MonoBehaviour {
+    [SerializeField] BulletRecyclerReference _bulletRecyclerRef;
     [SerializeField] Transform _spawnPoint;
     [SerializeField] Bullet _bulletPrefab;
+    [SerializeField] bool _canFire = true;
 
-    public void FireBullet(int power)
-    {
-        var b = Instantiate(_bulletPrefab, _spawnPoint.transform.position, Quaternion.identity, null)
-            .Init(_spawnPoint.TransformDirection(Vector3.right), power);
+    public bool CanFire { get { return _canFire; } set { _canFire = value; } }
+
+
+    public void FireBullet(int power) {
+        var b = _bulletRecyclerRef.Summon(_spawnPoint.transform.position,
+            Quaternion.identity,
+            _spawnPoint.TransformDirection(Vector3.right),
+            power);
     }
 
 }

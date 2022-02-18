@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Block",
+                    "type": "Value",
+                    "id": "6745ab79-87d2-4388-9781-1a4a6e4d56b5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -110,6 +119,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d9cbc9bb-5555-4c89-b10c-c0933e6d6da2",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseControl",
+                    "action": "Block",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
