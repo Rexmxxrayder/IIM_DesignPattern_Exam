@@ -34,7 +34,7 @@ public class Health : MonoBehaviour, IHealth {
         CurrentHealth = _startHealth;
         OnSpawn?.Invoke();
         for (int i = 0; i < feedbacks.Count; i++) {
-            OnDamage += (int c) => feedbacks[i].ShowFeedback();
+            OnDamage += (int c) => StartCoroutine(feedbacks[i].ShowFeedback());
         }
     }
 

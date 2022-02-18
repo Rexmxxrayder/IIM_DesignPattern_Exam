@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] BulletRecyclerReference _bulletRecyclerRef;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] float _speed;
-    [SerializeField] float _collisionCooldown = 0.5f;
+    [SerializeField] float _collisionCooldown = 0.2f;
 
     public Vector3 Direction { get; private set; }
     public int Power { get; private set; }
